@@ -48,49 +48,7 @@ public abstract class Tank {
         return status == TankStatus.ACTIVE && integrity > 0;
     }
 
-    // = = = = METODOS DE REPARO = = = = //
-
-    public boolean CanRepair() {
-        if (integrity < 50 &&
-                status != TankStatus.DESTROYED &&
-                status != TankStatus.UNDER_REPAIR &&
-                integrity > 0) {
-
-                    return true;
-                }
-
-        return false;
-    } 
-
-    public void StartRepair() {
-        if (CanRepair()) {
-            status = TankStatus.UNDER_REPAIR;
-            repairTurn = getRepairTurnsDuration();
-            System.out.println(codename + " is under repair for " + repairTurn + " turns.");
-        } 
-    }
-
-    public void ProcessRepairTurn() {
-        if (status == TankStatus.UNDER_REPAIR) {
-            repairTurn--;
-            integrity = Math.min(100, integrity + 15); // Repara 15 de integridade por turno, até o máximo de 100
-
-            System.out.println(codename + " is being repaired. Remaining turns: " + repairTurn + ". Current integrity: " + integrity);
-
-            if (repairTurn <= 0 || integrity >= 100) {
-                 CompleteRepair();
-            }
-        }  
-    }
-
-    public void CompleteRepair() {
-        status = TankStatus.ACTIVE; 
-        repairTurn = 0;
-        integrity = Math.min(100, integrity); // Garante que a integridade não exceda 100
-        System.out.println(codename + " has completed repairs and is now active with integrity: " + integrity);
-    }
-
-
+    
     // = = = METODO DE TOMAR DANO = = = =
 
     public void TakeDamage(double damage) {
