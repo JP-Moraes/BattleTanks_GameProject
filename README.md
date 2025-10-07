@@ -2,7 +2,10 @@
 Projeto de POO da universidade
 
 # Alunos da Equipe
-Rafael Vergolino, João Pedro Martins, Luca Rodriguez, João Henrique 
+- Rafael Vergolino,
+- João Pedro Martins,
+- Luca Rodriguez, 
+- João Henrique 
 
 # O que é?
 O Battle_Tanks é um jogo de Java que você pode criar tanques para batalhar. O projeto permite voce configurar as armas a maneira que desejar
