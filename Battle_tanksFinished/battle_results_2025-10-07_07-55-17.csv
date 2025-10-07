@@ -1,0 +1,24 @@
+TANK BATTLE ARENA - BATTLE RESULTS
+Generated:,2025-10-07 07:55:17
+Game Mode:,THREE_VS_THREE
+Arena:,Crimson Dunes Zone
+,
+PLAYER TEAM
+Codename, Class, Pilot.Status, Shield, Integrity, Hit Score, Destruction Score, Total Score
+Tower ,HEAVY ,HUMAN ,ACTIVE ,650 ,100 ,0 ,50 ,50
+Medina ,MEDIUM ,HUMAN ,ACTIVE ,300 ,100 ,0 ,50 ,50
+Tails ,MEDIUM ,HUMAN ,ACTIVE ,300 ,100 ,0 ,0 ,0
+Shadow ,LIGHT ,HUMAN ,ACTIVE ,250 ,100 ,0 ,0 ,0
+TOTAL,,4 tanks: 100
+,
+AI TEAM
+Codename, Class, Pilot.Status, Shield, Integrity, Hit Score, Destruction Score, Total Score
+Reaper ,LIGHT ,AI ,DESTROYED ,20 ,0 ,10 ,0 ,10
+Sonic ,HEAVY ,AI ,DESTROYED ,306 ,0 ,20 ,0 ,20
+TOTAL,,2 tanks: 30
+,
+BATTLE STATISTICS
+Category,Value
+Player Team Total Score,100
+AI Team Total Score,30
+Battle Winner,PLAYER TEAM

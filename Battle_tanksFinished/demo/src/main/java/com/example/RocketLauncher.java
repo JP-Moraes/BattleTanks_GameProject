@@ -3,68 +3,35 @@ package com.example;
 public class RocketLauncher extends Module{
 
     protected RocketLauncher() {
-        super(AmmoType.EXPLOSIVE, 250, 6);
+        super(AmmoType.EXPLOSIVE, 100, 6);
         
     }
 
     @Override
-    public double getMaxHeat() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getMaxHeat'");
-    }
+    public double getHeatPerShot() { return 35; }
 
     @Override
-    public double getHeatPerShot() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getHeatPerShot'");
-    }
+    public double getHeatDissipationRate() { return 30; }
 
     @Override
-    public double getHeatDissipationRate() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getHeatDissipationRate'");
-    }
+    public double getOverheatThreshold() { return 190; }
 
     @Override
-    public double getOverheatThreshold() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getOverheatThreshold'");
-    }
+    public int getCoolingEffiency() { return 40;}
 
     @Override
-    public int getCoolingEffiency() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCoolingEffiency'");
-    }
+    public int BaseReloadTurns() { return 5;}
 
     @Override
-    public int BaseReloadTurns() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'BaseReloadTurns'");
-    }
+    public int getAmmoConsumption() { return 1;}
 
     @Override
-    public int getAmmoConsumption() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAmmoConsumption'");
-    }
+    public int getAccuracyBack() { return 10;}
 
     @Override
-    public int getAccuracyBack() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAccuracyBack'");
-    }
+    public int getAccuracyFrontal() { return 40;}
 
     @Override
-    public int getAccuracyFrontal() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAccuracyFrontal'");
-    }
-
-    @Override
-    public int getAccuracyLateral() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAccuracyLateral'");
-    }
+    public int getAccuracyLateral() { return 30;}
     
 }

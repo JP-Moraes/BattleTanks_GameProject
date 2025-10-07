@@ -11,7 +11,6 @@ public class TankCreator {
         this.scanner = new Scanner(System.in);
     }
 
-
     // = = = = METODOS QUE CRIAM O TANQUE = = = = = 
 
     public void CreateNewTank() {
@@ -48,10 +47,10 @@ public class TankCreator {
     private TankClass ChooseTankClass() {
 
         System.out.println("Choose Tank Class:");
-        System.out.println("1. 🐘 Heavy Tank");
-        System.out.println("2. ⚖️ Medium Tank");
-        System.out.println("3. 🐆 Light Tank");
-        System.out.println("4. ❌ Cancel");
+        System.out.println("1. Heavy Tank");
+        System.out.println("2. Medium Tank");
+        System.out.println("3. Light Tank");
+        System.out.println("4. Cancel");
         
         int choice = Integer.parseInt(scanner.nextLine());
         return switch (choice) {
@@ -64,9 +63,9 @@ public class TankCreator {
 
     private PilotType ChoosePilotType() {
         System.out.println("Choose Pilot Type:");
-        System.out.println("1. 🎯 Human");
-        System.out.println("2. ⚡ Ai");
-        System.out.println("5. ❌ Cancel");
+        System.out.println("1. Human");
+        System.out.println("2. Ai");
+        System.out.println("5. Cancel");
         
         int choice = Integer.parseInt(scanner.nextLine());
         return switch (choice) {
@@ -81,9 +80,9 @@ public class TankCreator {
         try {
             return switch (classType) {
 
-                case HEAVY -> new FortressTank(Codename, shield, classType, pilotType, shield);
-                case MEDIUM -> new BlastTank(Codename, shield, classType, pilotType, shield);
-                case LIGHT -> new SniperTank(Codename, shield, classType, pilotType, shield);
+                case HEAVY -> new FortressTank(Codename, 0, classType, pilotType, shield);
+                case MEDIUM -> new BlastTank(Codename, 0, classType, pilotType, shield);
+                case LIGHT -> new SniperTank(Codename, 0, classType, pilotType, shield);
             };
 
         } catch (Exception e) {
@@ -97,7 +96,7 @@ public class TankCreator {
     // = = = MÉTODOS DE BUSCA E EXCLUSÃO = = =
     
     public void searchTank() {
-        System.out.println("\n=== 🔍 SEARCH TANK ===");
+        System.out.println("\n=== SEARCH TANK ===");
         System.out.print("Enter tank codename: ");
         String codename = scanner.nextLine();
         
@@ -105,18 +104,18 @@ public class TankCreator {
         if (tank != null) {
             management.displayTankInfo(tank);
         } else {
-            System.out.println("❌ Tank '" + codename + "' not found!");
+            System.out.println("Tank '" + codename + "' not found!");
         }
     }
     
     public void deleteTank() {
-        System.out.println("\n=== 🗑️ DELETE TANK ===");
+        System.out.println("\n=== DELETE TANK ===");
         System.out.print("Enter tank codename to delete: ");
         String codename = scanner.nextLine();
         
         boolean success = management.unregisterTank(codename);
         if (!success) {
-            System.out.println("❌ Tank '" + codename + "' not found!");
+            System.out.println("Tank '" + codename + "' not found!");
         }
     }
 

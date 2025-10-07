@@ -47,7 +47,7 @@ public class CombatSystem {
     // = = = = METODO QUE EXECUTA O ATAQUE = = = = = = =
 
     public void ExecuteAttack(Tank attacker, Tank target) {
-         System.out.println("\n🎯 " + attacker.getCodename() + " → " + target.getCodename());
+         System.out.println("\n " + attacker.getCodename() + " → " + target.getCodename());
 
          CombatResult result = attacker.getWeapon().CalculateDamageAndScore();
 
@@ -61,16 +61,16 @@ public class CombatSystem {
             if (!target.IsAlive()) {
             int destructionBonus = 50;
             attacker.AddDestructionScore(destructionBonus);
-            System.out.println("💀 " + target.getCodename() + " DESTROYED! +" + destructionBonus + " points");
+            System.out.println("BOOM!!!" + target.getCodename() + " DESTROYED! +" + destructionBonus + " points");
           }
 
            // Mostra resultados
-            System.out.println("   🎯 Accuracy: " + result.getAccuracy());
-            System.out.println("   💥 Damage: " + result.getDamage());
-            System.out.println("   🏆 Score: " + result.getScore());
-            System.out.println("   ❤️  " + target.getCodename() + " Health: " + target.getIntegrity() + "%");
+            System.out.println(" Accuracy: " + result.getAccuracy());
+            System.out.println(" Damage: " + result.getDamage());
+            System.out.println(" Score: " + result.getScore());
+            System.out.println("   " + target.getCodename() + " Health: " + target.getIntegrity() + "%");
         } else {
-            System.out.println("   ❌ MISSED! No damage dealt");
+            System.out.println("MISSED! No damage dealt");
         }
    }
 
@@ -88,22 +88,21 @@ public class CombatSystem {
 
     // = = = = Metodo de Status = = = = = = 
     public void DisplayBattleStatus() {
-        System.out.println("\n=== 📊 BATTLE STATUS ===");
+        System.out.println("\n=== BATTLE STATUS ===");
 
-        System.out.println("👤 PLAYER TEAM:");
+        System.out.println(" PLAYER TEAM:");
          manager.getHumanTeam().forEach(tank -> {
-            String status = tank.IsAlive() ? "✅ " + tank.getIntegrity() + "%" : "💀 DESTROYED";
+            String status = tank.IsAlive() ? "HP" + tank.getIntegrity() + "%" : "DESTROYED";
             System.out.println("   " + tank.getCodename() + ": " + status + " | Score: " + tank.getTotalScore());
         });
 
 
-         System.out.println("🤖 AI TEAM:");
+         System.out.println(" AI TEAM:");
         manager.getAiTeam().forEach(tank -> {
-            String status = tank.IsAlive() ? "✅ " + tank.getIntegrity() + "%" : "💀 DESTROYED";
+            String status = tank.IsAlive() ? "HP" + tank.getIntegrity() + "%" : "DESTROYED";
             System.out.println("   " + tank.getCodename() + ": " + status + " | Score: " + tank.getTotalScore());
         });
     }
-    
 
 
     // = = = = = Condição de vitoria = = = = = =

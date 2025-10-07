@@ -25,20 +25,20 @@ public class TankManagement{
 
     public boolean registerTank(Tank tank) {
         if (tank ==  null) {
-            System.out.println("❌ Cannot register null tank!");
+            System.out.println("Cannot register null tank!");
             return false;
         }
         
         // Verifica o limite de tanks maximo
 
         if (isRegistryFull()) {
-            System.out.println("❌ Tank registry is full! Maximum " + maxTanks + " tanks allowed.");
+            System.out.println("Tank registry is full! Maximum " + maxTanks + " tanks allowed.");
             return false;
         }
 
         //Checa se o codinome do tanques são iguais
         if(isCodenameTaken(tank.getCodename())) {
-            System.out.println("❌ Codename '" + tank.getCodename() + "' is already taken!");
+            System.out.println("Codename '" + tank.getCodename() + "' is already taken!");
             return false;
         }
 
@@ -49,7 +49,7 @@ public class TankManagement{
         }
 
         registeredTanks.add(tank);
-        System.out.println("✅ Tank '" + tank.getCodename() + "' registered successfully! ID: " + tank.getId());
+        System.out.println("Tank '" + tank.getCodename() + "' registered successfully! ID: " + tank.getId());
         return true;
     }
 
@@ -63,15 +63,14 @@ public class TankManagement{
     }
 
     // = = = = = METODOS DE RELATIOS = = = = = = //
-
     
     public void displayAllTanks() {
         if (registeredTanks.isEmpty()) {
-            System.out.println("📭 No tanks registered!");
+            System.out.println(" No tanks registered!");
             return;
         }
 
-        System.out.println("\n=== 🎯 REGISTERED TANKS (" + registeredTanks.size() + ") ===");
+        System.out.println("\n=== REGISTERED TANKS (" + registeredTanks.size() + ") ===");
         for (Tank tank : registeredTanks) {
             displayTankInfo(tank);
             System.out.println("────────────────────────────");
@@ -80,7 +79,7 @@ public class TankManagement{
 
     public void displayTankInfo(Tank tank) {
         if (tank == null) {
-            System.out.println("❌ Tank is null!");
+            System.out.println("Tank is null!");
             return;
         }
 
@@ -109,11 +108,11 @@ public class TankManagement{
     Tank tank = findTankByCodename(codename);
     if (tank != null) {
         registeredTanks.remove(tank);
-        System.out.println("🗑️ Tank '" + codename + "' unregistered successfully!");
+        System.out.println("Tank '" + codename + "' unregistered successfully!");
         return true;
     }
     
-    System.out.println("❌ Tank '" + codename + "' not found!");
+    System.out.println("Tank '" + codename + "' not found!");
     return false;
 }
 
@@ -160,22 +159,8 @@ public class TankManagement{
     public void clearRegistry() {
         registeredTanks.clear();
         nextTankID = 1;
-        System.out.println("🧹 Tank registry cleared!");
+        System.out.println("Tank registry cleared!");
     }
-
-    // Verifica se existem tanques suficientes para um modo de jogo
-     
-    public boolean hasEnoughTanksForGame(int requiredTanks) {
-        int activeCount = getActiveTanksCount();
-        boolean hasEnough = activeCount >= requiredTanks;
-        
-        if (!hasEnough) {
-            System.out.println("❌ Not enough active tanks! Need " + requiredTanks + ", but only have " + activeCount);
-        }
-        
-        return hasEnough;
-    }
-
 
     // Metodos de limitação de quantidade de tanque
 

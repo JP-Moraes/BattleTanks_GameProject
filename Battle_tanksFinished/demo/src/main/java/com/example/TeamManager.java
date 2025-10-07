@@ -35,7 +35,8 @@ public class TeamManager {
     }
 
     //Cria os times baseado no Tipo de Piloto
-    public void CreateTeamAuto() {
+    public boolean CreateTeamAuto() {
+        ClearTeams();
 
         List<Tank> allTanks = registry.getAllTanks();
 
@@ -47,7 +48,19 @@ public class TeamManager {
             }
         }
 
-        System.out.println("Teams created automatically");
+        if (humanTeam.isEmpty()) {
+        System.out.println("No player tanks found! AI team has " + aiTeam.size() + " tanks");
+       }
+    
+        if (aiTeam.isEmpty()) {
+        System.out.println("No AI tanks found! Player team has " + humanTeam.size() + " tanks");
+       }
+
+       System.out.println(" Teams created automatically!");
+       System.out.println(" Player Team: " + humanTeam.size() + " tanks");
+       System.out.println(" AI Team: " + aiTeam.size() + " tanks");
+    
+       return true;
     }
 
     public void displayTeams() {
@@ -58,15 +71,32 @@ public class TeamManager {
     for (Tank tank : humanTeam) {
         System.out.println("   🔸 " + tank.getCodename() + 
                          " [" + tank.getClassType() + " - " + tank.getPilotType() + "]");
-    }
+       }
     
     // ✅ MOSTRA TIME DA IA (já tem aceeso ao List) 
     System.out.println("\n🤖 AI TEAM (" + aiTeam.size() + " tanks):");
     for (Tank tank : aiTeam) {
         System.out.println("   🔸 " + tank.getCodename() + 
                          " [" + tank.getClassType() + " - " + tank.getPilotType() + "]");
+       }
     }
-}
+
+     public boolean areTeamsReady() {
+        boolean playerTeamReady = !humanTeam.isEmpty();
+        boolean aiTeamReady = !aiTeam.isEmpty();
+        
+        if (playerTeamReady && aiTeamReady) {
+            System.out.println("Teams are ready for battle!");
+            System.out.println(" Player: " + humanTeam.size() + " tanks");
+            System.out.println(" AI: " + aiTeam.size() + " tanks");
+            return true;
+        } else {
+            System.out.println("❌ Teams are not ready:");
+            if (!playerTeamReady) System.out.println(" Player team is empty");
+            if (!aiTeamReady) System.out.println(" AI team is empty");
+            return false;
+        }
+    }
 
 
     // Metodos para os times de cada modo
@@ -106,9 +136,6 @@ public class TeamManager {
     public int GetAITeamSize() {
         return aiTeam.size();
     }
-
-
-    
     
     
 }

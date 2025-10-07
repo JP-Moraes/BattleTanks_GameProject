@@ -9,11 +9,6 @@ public class FortressTank extends Tank {
         
     }
 
-    @Override
-    protected void InitializeTankSettings() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'InitializeTankSettings'");
-    }
 
     @Override
     protected Module CreateModule() {
@@ -21,9 +16,5 @@ public class FortressTank extends Tank {
 
     }
 
-    @Override
-    protected int getRepairTurnsDuration() {
-        return 5;
-    }
     
 }

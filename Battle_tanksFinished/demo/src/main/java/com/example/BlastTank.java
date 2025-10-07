@@ -8,20 +8,11 @@ public class BlastTank extends Tank {
         
     }
 
-    @Override
-    protected void InitializeTankSettings() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'InitializeTankSettings'");
-    }
 
     @Override
     protected Module CreateModule() {
         return new RocketLauncher();
     }
 
-    @Override
-    protected int getRepairTurnsDuration() {
-        return 4;
-    }
     
 }

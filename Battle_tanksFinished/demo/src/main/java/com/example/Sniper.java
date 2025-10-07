@@ -46,63 +46,34 @@ public class Sniper extends Module {
     }
 
     @Override
-    public int getAmmoConsumption() {
-        return 1; //Consone 1 bala; 
-    }
+    public int getAmmoConsumption() { return 1; }
 
     @Override
-    public double getMaxHeat() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getMaxHeat'");
-    }
+    public double getHeatPerShot() { return 15; }
 
     @Override
-    public double getHeatPerShot() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getHeatPerShot'");
-    }
+    public double getHeatDissipationRate() { return 20; }
 
     @Override
-    public double getHeatDissipationRate() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getHeatDissipationRate'");
-    }
+    public double getOverheatThreshold() { return 200; }
 
     @Override
-    public double getOverheatThreshold() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getOverheatThreshold'");
-    }
+    public int getCoolingEffiency() { return 45;}
+
+    //Configuração de Recarga
 
     @Override
-    public int getCoolingEffiency() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getCoolingEffiency'");
-    }
+    public int BaseReloadTurns() { return 5;}
 
+    // Configurações de PRECISÂO
 
     @Override
-    public int BaseReloadTurns() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'BaseReloadTurns'");
-    }
+    public int getAccuracyBack() { return 15; }
 
     @Override
-    public int getAccuracyBack() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getAccuracyBack'");
-    }
+    public int getAccuracyFrontal() { return 40; }
 
     @Override
-    public int getAccuracyFrontal() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getAccuracyFrontal'");
-    }
-
-    @Override
-    public int getAccuracyLateral() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getAccuracyLateral'");
-    }
+    public int getAccuracyLateral() { return 25; }
     
 }

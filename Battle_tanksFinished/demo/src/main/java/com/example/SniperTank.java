@@ -9,18 +9,8 @@ public class SniperTank extends Tank{
     }
 
     @Override
-    protected void InitializeTankSettings() {
-        throw new UnsupportedOperationException("Unimplemented method 'InitializeTankSettings'");
-    }
-
-    @Override
     protected Module CreateModule() {
         return new Sniper();
-    }
-
-    @Override
-    protected int getRepairTurnsDuration() {
-        return 3; 
     }
     
 }

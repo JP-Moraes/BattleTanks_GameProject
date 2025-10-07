@@ -1,0 +1,20 @@
+TANK BATTLE ARENA - BATTLE RESULTS
+Generated:,2025-10-06 19:26:34
+Game Mode:,ONE_VS_ONE
+Arena:,Bullet Road Zone
+,
+PLAYER TEAM
+Codename,Class,Pilot,Status,Shield,Integrity,Hit Score,Destruction Score,Total Score
+Reaper,LIGHT,HUMAN,ACTIVE,300,100,0,50,50
+TOTAL,,1 tanks,,,,,,50
+,
+AI TEAM
+Codename,Class,Pilot,Status,Shield,Integrity,Hit Score,Destruction Score,Total Score
+Tower,MEDIUM,AI,DESTROYED,240,0,40,0,40
+TOTAL,,1 tanks,,,,,,40
+,
+BATTLE STATISTICS
+Category,Value
+Player Team Total Score,50
+AI Team Total Score,40
+Battle Winner,PLAYER TEAM

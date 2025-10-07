@@ -12,7 +12,7 @@ public abstract class Tank {
     private TankStatus status;
     private int shield;
     private int integrity;
-    private int repairTurn; // Tempo para concertar (recebe do metodo)
+    private int repairTurn; // Não tá sendo usado
     private Module weapon;
 
     //Pontuação 
@@ -32,14 +32,12 @@ public abstract class Tank {
         this.integrity = 100; // Integridade inicial
         this.destructionScore = 0;
 
-        InitializeTankSettings();
+        
         this.weapon = CreateModule();
 
     }
 
-    protected abstract void InitializeTankSettings(); // Metodo abstrato para configurações específicas de cada tanque (Override)
     protected abstract Module CreateModule(); // Metodo abstrato para configurar os modulos do tanque (Override)
-    protected abstract int getRepairTurnsDuration(); 
 
 
     // Metodo que verifica se o tanque ainda está ativo
@@ -48,7 +46,6 @@ public abstract class Tank {
         return status == TankStatus.ACTIVE && integrity > 0;
     }
 
-    
     // = = = METODO DE TOMAR DANO = = = =
 
     public void TakeDamage(double damage) {
@@ -77,7 +74,7 @@ public abstract class Tank {
         if (integrity <= 0) {
             status = TankStatus.DESTROYED;
             integrity = 0;
-            System.out.println("💀 " + codename + " DESTROYED!");
+            System.out.println(":(" + codename + " DESTROYED!");
         } 
     }
 
@@ -102,13 +99,13 @@ public abstract class Tank {
     public void AddDestructionScore(int points) {
         this.destructionScore += points;  
         UpdateTotalScore();
-        System.out.println("💀 " + codename + " +" + points + " destruction points!");
+        System.out.println("BOOM!!!" + codename + " +" + points + " destruction points!");
     }
 
     public void AddHitScore(int points) {
         this.hitScore += points;
         UpdateTotalScore();
-        System.out.println("🎯 " + codename + " +" + points + " hit points! Total: " + hitScore);
+        System.out.println("Tank" + codename + " +" + points + " hit points! Total: " + hitScore);
     }
 
     private void UpdateTotalScore() {

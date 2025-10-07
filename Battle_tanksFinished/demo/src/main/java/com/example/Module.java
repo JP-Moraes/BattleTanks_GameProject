@@ -40,7 +40,6 @@ public abstract class Module {
     } 
 
     // Configurações Superaquecimento para cada arma
-    public abstract double getMaxHeat(); 
     public abstract double getHeatPerShot();
     public abstract double getHeatDissipationRate();
     public abstract double getOverheatThreshold();
